@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pasos Básicos",
+    "descripción": "Aqui va una descripcion",
+    "profesores": ["Diego Alfonso", "Nanci Dominguez"],
+    "materia": {
+      "id": 1,
+      "nombre": "Salsa On 1"
+    },
+    "fragmentos": [
+      {
+        "id": 1.1,
+        "nombre": "Nociones Básicas",
+        "url": "www.vimeo.com",
+        "recursos": ["cosas"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
+export const REGISTER_FAIL = "REGISTER_FAIL";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT = "LOGOUT";
+export const SET_MESSAGE = "SET_MESSAGE";
+export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
+export const REFRESH_TOKEN = "REFRESH_TOKEN";
+export const GET_ANUNCIOS = "GET_ANUNCIOS";
+export const POST_ANUNCIOS = "POST_ANUNCIOS";
+export const PUT_ANUNCIOS = "PUT_ANUNCIOS";
+export const DELETE_ANUNCIOS = "DELETE_ANUNCIOS";
+export const GET_ALL_ANUNCIOS = "GET_ALL_ANUNCIOS";
+export const GET_ALL_CURSOS = "GET_ALL_CURSOS";
+export const GET_ALL_MATERIAS = "GET_ALL_MATERIAS";
+export const GET_ALL_PROFESORES = "GET_ALL_PROFESORES";
+
+export const GET_ANUNCIO = "GET_ANUNCIO";
+export const GET_CURSO = "GET_CURSO";
+export const GET_MATERIA = "GET_MATERIA";
+export const GET_CLASE = "GET_CLASE";
