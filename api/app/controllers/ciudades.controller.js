@@ -19,17 +19,19 @@ const ciudadesDb = async () => {
   }
 };
 
-const getCiudades = async (req, res) => {
-  const { region } = req.params;
+const getCiudades = async (req, res, next) => {
+  const { provinciap } = req.params;
   try {
     let provincia = await Provincia.findOne({
-      where: { NOMBRE_PROVINCIA: region },
+      where: { NOMBRE_PROVINCIA: provinciap },
     });
     let ciudades = await Ciudad.findAll({
       where: { ProvinciumId: provincia.id },
     });
     return res.status(200).send(ciudades);
   } catch (error) {
+    console.error(error);
+    next(error);
     return res.status(404).send("Ciudades no encontradas");
   }
 };

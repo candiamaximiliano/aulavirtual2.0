@@ -7,7 +7,7 @@ var bcrypt = require("bcryptjs");
 exports.signup = async (req, res) => {
   // Save User to Database
   const {
-    fotoDePerfil,
+    imagen,
     nombre,
     apellido,
     usuario,
@@ -21,7 +21,7 @@ exports.signup = async (req, res) => {
   } = req.body;
 
   User.create({
-    fotoDePerfil,
+    imagen,
     nombre,
     apellido,
     usuario,
@@ -43,13 +43,13 @@ exports.signup = async (req, res) => {
           },
         }).then((roles) => {
           user.setRoles(roles).then(() => {
-            res.send({ message: "User was registered successfully!" });
+            res.send({ message: "¡Usuario registrado exitosamente!" });
           });
         });
       } else {
         // user role = 1
         user.setRoles([1]).then(() => {
-          res.send({ message: "User was registered successfully!" });
+          res.send({ message: "¡Usuario registrado exitosamente!" });
         });
       }
     })
@@ -66,7 +66,9 @@ exports.signin = (req, res) => {
   })
     .then(async (user) => {
       if (!user) {
-        return res.status(404).send({ message: "User Not found." });
+        return res
+          .status(404)
+          .send({ message: "El usuario o la contraseña son incorrectas" });
       }
       const passwordIsValid = bcrypt.compareSync(
         req.body.contraseña,
@@ -75,7 +77,7 @@ exports.signin = (req, res) => {
       if (!passwordIsValid) {
         return res.status(401).send({
           accessToken: null,
-          message: "Invalid Password!",
+          message: "El usuario o la contraseña son incorrectas",
         });
       }
       let authorities = [];
@@ -87,7 +89,7 @@ exports.signin = (req, res) => {
       const token = jwt.sign(
         {
           id: user.id,
-          fotoDePerfil: user.fotoDePerfil,
+          imagen: user.imagen,
           usuario: user.usuario,
           email: user.email,
           nombre: user.nombre,
@@ -117,21 +119,24 @@ exports.signin = (req, res) => {
 exports.refreshToken = async (req, res) => {
   const { refreshToken: requestToken } = req.body;
   if (requestToken == null) {
-    return res.status(403).json({ message: "Refresh Token is required!" });
+    return res.status(403).json({ message: "Se requiere Refresh Token" });
   }
   try {
     let refreshToken = await RefreshToken.findOne({
       where: { token: requestToken },
     });
     if (!refreshToken) {
-      res.status(403).json({ message: "Refresh token is not in database!" });
+      res.status(403).json({
+        message: "El Refresh Token no se encuentra en la base de datos",
+      });
       return;
     }
     if (RefreshToken.verifyExpiration(refreshToken)) {
       RefreshToken.destroy({ where: { id: refreshToken.id } });
 
       res.status(403).json({
-        message: "Refresh token was expired. Please make a new signin request",
+        message:
+          "El Refresh Token expiró. Por favor realice una nueva solicitud",
       });
       return;
     }
@@ -139,7 +144,7 @@ exports.refreshToken = async (req, res) => {
     let newAccessToken = jwt.sign(
       {
         id: user.id,
-        fotoDePerfil: user.fotoDePerfil,
+        imagen: user.imagen,
         usuario: user.usuario,
         email: user.email,
         nombre: user.nombre,

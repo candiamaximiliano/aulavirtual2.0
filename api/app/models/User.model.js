@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
       allowNull: false,
       primaryKey: true,
     },
-    fotoDePerfil: {
+    imagen: {
       type: DataTypes.TEXT,
       defaultValue: "zunzuncito",
     },

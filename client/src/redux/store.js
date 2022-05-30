@@ -7,6 +7,8 @@ import {
   materiaReducer,
   profesorReducer,
   claseReducer,
+  provincesReducer,
+  citiesReducer,
 } from "./reducers";
 import auth from "./auth";
 import message from "./message";
@@ -20,6 +22,8 @@ export default createStore(
     claseReducer,
     auth,
     message,
+    provincesReducer,
+    citiesReducer,
   }),
   composeWithDevTools(applyMiddleware(thunk))
 );

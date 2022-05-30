@@ -40,7 +40,7 @@ exports.putUser = async (req, res, next) => {
           },
           { where: { id: id } }
         );
-    res.send("Usuario actualizada correctamente");
+    res.send("Usuario actualizado correctamente");
   } catch (error) {
     console.error(error);
     next(error);

@@ -3,28 +3,36 @@ import getTokenData from "./getTokenData";
 import TokenService from "./token.service";
 
 const userRegister = ({
+  imagen,
   nombre,
   apellido,
-  password,
+  usuario,
   email,
-  imagen,
-  fecha_nacimiento,
+  contraseña,
+  dni,
+  fechaDeNacimiento,
+  direccion,
   pais,
   provincia,
   ciudad,
-  celular,
+  numeroDeContacto,
+  consentimientoWhatsapp,
 }) => {
   return api.post("/auth/signup", {
+    imagen,
     nombre,
     apellido,
-    password,
+    usuario,
     email,
-    imagen,
-    fecha_nacimiento,
+    contraseña,
+    dni,
+    fechaDeNacimiento,
+    direccion,
     pais,
     provincia,
     ciudad,
-    celular,
+    numeroDeContacto,
+    consentimientoWhatsapp,
   });
 };
 

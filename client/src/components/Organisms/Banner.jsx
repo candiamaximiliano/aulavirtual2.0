@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import banner from "../../styles/banner.module.css";
 
 export const Banner = ({
   color,
@@ -13,21 +14,28 @@ export const Banner = ({
   info,
 }) => {
   return (
-    <div className={`main-banner img-container l-block ${color}`}>
+    <div className={`main-banner img-container l-block ${banner.data}`}>
       <div className="ed-grid">
         <div>
-          <img src={image.src} alt={image.alt} className="main-banner__img" />
+          <img
+            src={image.src}
+            alt={image.alt}
+            className={`main-banner__img ${banner.image}`}
+          />
           {home ? (
             <div className="ed-grid m-grid-2">
-              <div className="main-banner__data">
+              <div className={`main-banner__data`}>
                 <h1 className="main-banner__title">{title}</h1>
                 <p>{subtitle}</p>
-                <Link to="cursos" className="button accent-color">
+                <Link to="/cursos" className="button accent-color">
                   Ver cursos
                 </Link>
               </div>
               <div className="img-container s-ratio-19-9">
-                <img src={poster} alt="Curso actual" />
+                <img
+                  src={`https://profesoradocaribeño.com.ar/static/${poster}"`}
+                  alt="Curso actual"
+                />
               </div>
             </div>
           ) : courseBanner ? (
@@ -44,7 +52,10 @@ export const Banner = ({
                 )}
               </div>
               <div className="img-container s-ratio-16-9 m-cols-1">
-                <img src={poster} alt="Curso actual" />
+                <img
+                  src={`https://profesoradocaribeño.com.ar/static/${poster}"`}
+                  alt="Curso actual"
+                />
               </div>
             </div>
           ) : (

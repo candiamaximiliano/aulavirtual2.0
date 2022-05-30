@@ -28,9 +28,9 @@ const Materias = () => {
             <Card
               key={c.id}
               cardId={c.id}
-              picture={c.clase.nombre}
+              picture={c.portada}
               name={c.nombre}
-              path="cursos"
+              path="materias"
             />
           ))}
         </main>

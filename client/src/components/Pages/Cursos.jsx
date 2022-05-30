@@ -16,10 +16,10 @@ const Cursos = () => {
       <Banner
         color="first-color"
         image={{
-          src: "",
-          alt: "",
+          src: "https://profesoradocaribeño.com.ar/static/prueba.png",
+          alt: "alt",
         }}
-        title="Especialidades"
+        title="Cursos"
         subtitle="Domina una tecnología con las rutas de aprendizaje que te ofrecemos"
       />
       {cursos && (

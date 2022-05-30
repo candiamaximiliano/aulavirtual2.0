@@ -16,12 +16,14 @@ import {
   SET_MESSAGE,
   REFRESH_TOKEN,
   CLEAR_MESSAGE,
+  SET_PROVINCES,
+  SET_CITIES,
 } from "./actions";
 
 import AuthService from "../services/auth.service";
 
 export const register = (input) => (dispatch) => {
-  return AuthService.register(input).then(
+  return AuthService.userRegister(input).then(
     (response) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -191,6 +193,30 @@ export const getClase = (id) => (dispatch) => {
       return dispatch({
         type: GET_CLASE,
         clase: resp.data,
+      });
+    })
+    .catch((error) => console.error(error));
+};
+
+export const chargeProvinces = () => (dispatch) => {
+  api
+    .get(`/provincias/`)
+    .then((resp) => {
+      return dispatch({
+        type: SET_PROVINCES,
+        provinces: resp.data,
+      });
+    })
+    .catch((error) => console.error(error));
+};
+
+export const chargeCities = (province) => (dispatch) => {
+  api
+    .get(`/ciudades/${province}`)
+    .then((resp) => {
+      return dispatch({
+        type: SET_CITIES,
+        cities: resp.data,
       });
     })
     .catch((error) => console.error(error));

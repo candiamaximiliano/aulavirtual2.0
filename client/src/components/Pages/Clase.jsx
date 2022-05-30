@@ -5,12 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Clase = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const clase = useSelector((state) => state.claseReducer.clase);
   const materia = useSelector((state) => state.materiaReducer.materia);
   useEffect(() => {
     dispatch(getMateria(1));
-    dispatch(getClase(123));
+    dispatch(getClase(1));
   }, [dispatch]);
 
   return (
@@ -22,16 +22,16 @@ const Clase = () => {
               <Vimeo video={clase.video} autoplay width={780} />
             </div>
             <div>
-              <h1 className="">{clase.name}</h1>
-              <span>{materia.name}</span>
+              <h1 className="">{clase.nombre}</h1>
+              <span>{materia.nombre}</span>
             </div>
           </div>
           <div className="lg-cols-4">
             <div>
               <h2 className="t3">Temario del curso</h2>
-              {materia.data.classes?.map((cl) => (
-                <div key={cl.class.id}>
-                  <h3>{cl.class.title}</h3>
+              {materia.clases?.map((cl) => (
+                <div key={cl.id}>
+                  <h3>{cl.title}</h3>
                   <ul className="data-list">
                     {cl.subjects?.map((s) => (
                       <li key={s.subject.id}>

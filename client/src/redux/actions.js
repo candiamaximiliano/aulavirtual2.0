@@ -19,3 +19,6 @@ export const GET_ANUNCIO = "GET_ANUNCIO";
 export const GET_CURSO = "GET_CURSO";
 export const GET_MATERIA = "GET_MATERIA";
 export const GET_CLASE = "GET_CLASE";
+
+export const SET_PROVINCES = "SET_PROVINCES";
+export const SET_CITIES = "SET_CITIES";

@@ -1,0 +1,29 @@
+.NotFoundContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error404 {
+  width: 70%;
+  margin: 10px;
+}
+
+.regresar {
+  background-color: rgb(20, 33, 57);
+  border: none;
+  border-radius: 7px;
+  margin: 0px 5px 5px 5px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.regresar:hover {
+  color: white;
+  text-decoration: none;
+}

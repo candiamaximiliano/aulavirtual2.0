@@ -1,0 +1,25 @@
+.article {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 2%;
+}
+
+.container {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3%;
+}
+
+.imageContainer {
+  max-width: 500px;
+}
+
+.coverImage {
+  border-radius: 8px;
+  object-fit: cover;
+}

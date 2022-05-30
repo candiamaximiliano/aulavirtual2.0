@@ -1,0 +1,64 @@
+.liContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+}
+
+.item {
+  list-style-type: none;
+  margin: 5px;
+  margin-right: 10px;
+}
+
+.NavLink {
+  color: floralwhite;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+}
+
+.NavLink:hover {
+  color: white;
+  cursor: pointer;
+  font-size: 1.01em;
+  position: static;
+  text-decoration: none;
+}
+
+.itemUser {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  list-style-type: none;
+  margin: 5px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.profileIcon {
+  color: var(--de-york) !important;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.8);
+}
+
+.user {
+  color: floralwhite;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+}
+
+.user:hover {
+  color: floralwhite;
+  cursor: pointer;
+  font-size: 1.01em;
+  position: static;
+  text-decoration: none;
+}
+
+.buttonLogout {
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  color: floralwhite;
+  text-shadow: 1px 1px 2px black;
+  margin: 2px;
+}

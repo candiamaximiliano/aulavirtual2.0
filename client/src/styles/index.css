@@ -1,0 +1,86 @@
+#root {
+  height: 100%;
+  width: 100%;
+  background-image: radial-gradient(circle at 50% -20.71%,
+      #d5ffaa 0,
+      #c0ffb0 10%,
+      #aaffb4 20%,
+      #94f6b6 30%,
+      #7fe8b7 40%,
+      #6cd8b4 50%,
+      #5cc8b0 60%,
+      #50b9ac 70%,
+      #48aea8 80%,
+      #43a4a5 90%,
+      #419ca4 100%);
+}
+
+/* SCSS RGB */
+:root {
+  --key-lime-pie: rgba(166, 198, 26, 1);
+  --mantis: rgba(138, 195, 94, 1);
+  --de-york: rgba(110, 189, 133, 1);
+  --sunset-orange: rgba(248, 88, 64, 1);
+  --flamingo: rgba(240, 88, 64, 1);
+  --amaranth: rgba(236, 70, 94, 1);
+  --froly: rgba(236, 106, 124, 1);
+  --carissma: rgba(236, 148, 172, 1);
+  --beauty-bush: rgba(236, 180, 196, 1);
+  --pink-flare: rgba(226, 198, 204, 1);
+  --dust-storm: rgba(231, 211, 215, 1);
+  --rose-fog: rgba(227, 175, 177, 1);
+  --nutmeg: rgba(128, 76, 48, 1);
+  --gray: rgba(143, 143, 143, 1);
+  --dove-gray: rgba(106, 106, 106, 1);
+  --emperor: rgba(84, 84, 84, 1);
+  --chicago: rgba(92, 92, 84, 1);
+  --bebas: 'Bebas Neue', cursive;
+  --montserrat: 'Montserrat', sans-serif;
+  --nunito: 'Nunito', sans-serif;
+  --rajawali: Rajawali;
+}
+
+html {
+  background-color: rgba(143, 143, 143, 0.5);
+}
+
+html::-webkit-scrollbar {
+  width: 15px;
+  height: 15px;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #00aeff, #a68eff);
+  border-radius: 10px;
+  box-shadow: #419ca4;
+  -webkit-box-shadow: rgba(0, 0, 0, .12) 0 3px 13px 1px;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #00aeff, #a68eff);
+  border-radius: 10px;
+  box-shadow: #419ca4;
+  -webkit-box-shadow: rgba(0, 0, 0, .12) 0 3px 13px 1px;
+}
+
+@font-face {
+  font-family: 'Rajawali';
+  src: local('Rajawali'), url(../fonts/Rajawali.otf) format('opentype');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Nunito&display=swap');
+
+
+h1 {
+  font-family: Rajawali;
+}

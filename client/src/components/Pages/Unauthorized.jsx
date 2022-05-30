@@ -1,8 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import unauthorized from "../../styles/unauthorized.module.css";
 
 const Unauthorized = () => (
   <div className="ed-grid">
-    <h1>403 Forbidden access</h1>
+    <div className={unauthorized.unauthorizedContainer}>
+      <img
+        className={unauthorized.error403}
+        src="https://profesoradocaribeño.com.ar/static/403.png"
+        alt="Forbidden"
+      />
+      <Link className={unauthorized.regresar} to="/">
+        Regresar
+      </Link>
+    </div>
   </div>
 );
 

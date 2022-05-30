@@ -23,7 +23,7 @@ const App = () => (
     <Routes>
       <Route path="/" element={<Layout />} />
       {/* public routes */}
-      <Route path="/register" element={<Register />} />
+      <Route path="/registro" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/unauthorized" element={<Unauthorized />} />
 

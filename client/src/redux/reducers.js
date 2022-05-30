@@ -7,7 +7,15 @@ import {
   GET_CURSO,
   GET_MATERIA,
   GET_CLASE,
+  SET_PROVINCES,
+  SET_CITIES,
 } from "./actions";
+
+// const initialState = {
+//   countries: [{ name: "Argentina", code: "ar" }],
+//   provinces: [null],
+//   cities: [null],
+// };
 
 export const anuncioReducer = (state = {}, action) => {
   if (action.type === GET_ALL_ANUNCIOS) {
@@ -74,6 +82,26 @@ export const claseReducer = (state = {}, action) => {
     return {
       ...state,
       clase: action.clase,
+    };
+  }
+  return state;
+};
+
+export const provincesReducer = (state = {}, action) => {
+  if (action.type === SET_PROVINCES) {
+    return {
+      ...state,
+      provinces: action.provinces,
+    };
+  }
+  return state;
+};
+
+export const citiesReducer = (state = {}, action) => {
+  if (action.type === SET_CITIES) {
+    return {
+      ...state,
+      cities: action.cities,
     };
   }
   return state;

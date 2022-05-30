@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Banner } from "../Organisms/Banner";
 import { getAllAnuncios } from "../../redux/actionCreators";
 import { Publication } from "../Organisms/Publication";
+import home from "../../styles/home.module.css";
 
 const Home = () => {
   const anuncios = useSelector((state) => state.anuncioReducer.anuncios);
@@ -18,11 +19,11 @@ const Home = () => {
         image=""
         title="Bienvenido a la experiencia más incleíble en educación online. Comienza hoy mismo a aprender"
         subtitle="Nuestro equipo ha desarrollado esta plataforma pensando en tí. Sabemos que estas buscando contenido de calidad. Aquí lo encontrarás"
-        home
-        poster=""
+        home={true}
+        poster="prueba.png"
       />
 
-      <main className="ed-grid m-grid-2">
+      <main className={`ed-grid m-grid-2 ${home.main}`}>
         <div className="l-section m-cols-2">
           <h2>Cartelera de anuncios</h2>
           {anuncios ? (
