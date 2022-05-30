@@ -8,7 +8,7 @@ const Layout = () => {
         <h1 className={layout.frase}>¡Con Sabor a Caribe!</h1>
         <img
           className={layout.logoLayout}
-          src="https://profesoradocaribeño.com.ar/static/Zunzuncito.png"
+          src="http://localhost:8080/static/Zunzuncito.png"
           alt="LogoApp"
         ></img>
       </div>

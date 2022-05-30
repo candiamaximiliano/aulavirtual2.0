@@ -33,7 +33,7 @@ export const Banner = ({
               </div>
               <div className="img-container s-ratio-19-9">
                 <img
-                  src={`https://profesoradocaribeño.com.ar/static/${poster}"`}
+                  src={`http://localhost:8080/static/${poster}"`}
                   alt="Curso actual"
                 />
               </div>
@@ -53,7 +53,7 @@ export const Banner = ({
               </div>
               <div className="img-container s-ratio-16-9 m-cols-1">
                 <img
-                  src={`https://profesoradocaribeño.com.ar/static/${poster}"`}
+                  src={`http://localhost:8080/static/${poster}"`}
                   alt="Curso actual"
                 />
               </div>

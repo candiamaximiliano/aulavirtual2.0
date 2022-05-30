@@ -66,7 +66,7 @@ const Login = () => {
       <div className={style.subContainer}>
         <div className={style.profileContainer}>
           <img
-            src="https://profesoradocaribeño.com.ar/static/zunzuncito.png"
+            src="http://localhost:8080/static/zunzuncito.png"
             alt="logo512.png"
             className={style.profileImage}
           />

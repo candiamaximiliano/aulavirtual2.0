@@ -62,7 +62,7 @@ const Curso = () => {
                     <div className="ed-grid m-grid-3">
                       <Link to={`/materias/${cr.id}`}>
                         <img
-                          src="https://profesoradocaribeño.com.ar/static/prueba.png"
+                          src="http://localhost:8080/static/prueba.png"
                           /* {cr.portada} */ alt={cr.nombre}
                         />
                       </Link>
