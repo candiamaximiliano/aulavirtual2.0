@@ -7,7 +7,7 @@ const { ciudadesDb } = require("./app/controllers/ciudades.controller");
 
 // Syncing all the models at once.
 conn
-  .sync({ force: true })
+  .sync({ force: false })
   .then(() => {
     server.listen(config.port, () => {
       console.log(`
@@ -16,12 +16,13 @@ conn
     ################################################`); // eslint-disable-line no-console
     });
   })
-  .then(() => paisesDb())
-  .then(() => regionDb())
-  .then(() => {
-    initial();
-    ciudadesDb().then(() => {
-      console.log("datos precargados correctamente");
-    });
-  })
+    .then(() => ciudadesDb())
+ // .then(() => paisesDb())
+ // .then(() => regionDb())
+ // .then(() => {
+   // initial();
+    //ciudadesDb().then(() => {
+      //console.log("datos precargados correctamente");
+   // });
+  //})
   .catch((error) => console.error(error));
