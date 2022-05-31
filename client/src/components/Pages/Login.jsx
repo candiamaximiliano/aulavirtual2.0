@@ -102,21 +102,18 @@ const Login = () => {
               <span>Iniciar Sesión</span>
             </button>
           </div>
-          {message &&
-            setTimeout(() => {
-              return (
-                <div className={style.formGroup}>
-                  <div
-                    className={
-                      successful ? "alert alert-success" : "alert alert-danger"
-                    }
-                    role="alert"
-                  >
-                    {message}
-                  </div>
-                </div>
-              );
-            }, 4000)}
+          {message && (
+            <div className={style.formGroup}>
+              <div
+                className={
+                  successful ? "alert alert-success" : "alert alert-danger"
+                }
+                role="alert"
+              >
+                {message}
+              </div>
+            </div>
+          )}
         </form>
       </div>
     </div>
