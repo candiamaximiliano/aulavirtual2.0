@@ -7,7 +7,7 @@ const Page404 = () => (
     <div className={page404.NotFoundContainer}>
       <img
         className={page404.error404}
-        src="http://localhost:8080/static/404.png"
+        src="https://profesoradocaribeño.com.ar/imagenes/404.png"
         alt="Not Found"
       />
       <Link className={page404.regresar} to="/">

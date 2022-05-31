@@ -404,7 +404,10 @@ const Register = () => {
     formData.append("file", file);
     formData.append("format", format);
     try {
-      const res = await api.post(`/upload/static/${code}.${format}`, formData);
+      const res = await api.post(
+        `/upload/imagenes/${code}.${format}`,
+        formData
+      );
       console.log(res);
       setInput({
         ...input,
@@ -455,7 +458,7 @@ const Register = () => {
       <div className={style.subContainer}>
         <div className={style.profileContainer}>
           <img
-            src={`http://localhost:8080/static/${input.imagen}`}
+            src={`https://profesoradocaribeño.com.ar/imagenes/${input.imagen}`}
             alt="profileImg"
             className={style.img}
             // ref={imgProfile}

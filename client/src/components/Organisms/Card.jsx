@@ -6,7 +6,10 @@ export const Card = ({ cardId, picture, name, path }) => {
     <article className="card s-border">
       <div className="img-container s-ratio-16-9">
         <Link to={`/${path}/${cardId}`}>
-          <img src={`http://localhost:8080/static/${picture}`} alt={name} />
+          <img
+            src={`https://profesoradocaribeño.com.ar/imagenes/${picture}`}
+            alt={name}
+          />
           {console.log(picture)}
         </Link>
       </div>
