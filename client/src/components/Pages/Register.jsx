@@ -458,7 +458,7 @@ const Register = () => {
       <div className={style.subContainer}>
         <div className={style.profileContainer}>
           <img
-            src={`https://profesoradocaribeño.com.ar/imagenes/${input.imagen}`}
+            src={`${process.env.REACT_APP_BACKEND}/imagenes/${input.imagen}`}
             alt="profileImg"
             className={style.img}
             // ref={imgProfile}

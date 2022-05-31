@@ -7,7 +7,7 @@ export const Card = ({ cardId, picture, name, path }) => {
       <div className="img-container s-ratio-16-9">
         <Link to={`/${path}/${cardId}`}>
           <img
-            src={`https://profesoradocaribeño.com.ar/imagenes/${picture}`}
+            src={`${process.env.REACT_APP_BACKEND}/imagenes/${picture}`}
             alt={name}
           />
           {console.log(picture)}

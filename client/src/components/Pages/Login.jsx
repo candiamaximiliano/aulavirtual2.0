@@ -66,7 +66,7 @@ const Login = () => {
       <div className={style.subContainer}>
         <div className={style.profileContainer}>
           <img
-            src="https://profesoradocaribeño.com.ar/imagenes/zunzuncito.png"
+            src={`${process.env.REACT_APP_BACKEND}/imagenes/zunzuncito.png`}
             alt="logo512.png"
             className={style.profileImage}
           />

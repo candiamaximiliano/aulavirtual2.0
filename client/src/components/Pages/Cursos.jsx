@@ -16,7 +16,7 @@ const Cursos = () => {
       <Banner
         color="first-color"
         image={{
-          src: "https://profesoradocaribeño.com.ar/imagenes/prueba.png",
+          src: `${process.env.REACT_APP_BACKEND}/imagenes/prueba.png`,
           alt: "alt",
         }}
         title="Cursos"

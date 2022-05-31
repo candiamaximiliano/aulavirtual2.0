@@ -33,9 +33,10 @@ export const Banner = ({
               </div>
               <div className="img-container s-ratio-19-9">
                 <img
-                  src={`https://profesoradocaribeño.com.ar/imagenes/${poster}"`}
+                  src={`${process.ENV.REACT_APP_BACKEND}/imagenes/${poster}"`}
                   alt="Curso actual"
                 />
+                {console.log(process.ENV.REACT_APP_BACKEND)}
               </div>
             </div>
           ) : courseBanner ? (
@@ -53,7 +54,7 @@ export const Banner = ({
               </div>
               <div className="img-container s-ratio-16-9 m-cols-1">
                 <img
-                  src={`https://profesoradocaribeño.com.ar/imagenes/${poster}"`}
+                  src={`${process.env.REACT_APP_BACKEND}/imagenes/${poster}"`}
                   alt="Curso actual"
                 />
               </div>

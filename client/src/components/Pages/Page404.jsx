@@ -7,7 +7,7 @@ const Page404 = () => (
     <div className={page404.NotFoundContainer}>
       <img
         className={page404.error404}
-        src="https://profesoradocaribeño.com.ar/imagenes/404.png"
+        src={`${process.env.REACT_APP_BACKEND}/imagenes/404.png`}
         alt="Not Found"
       />
       <Link className={page404.regresar} to="/">

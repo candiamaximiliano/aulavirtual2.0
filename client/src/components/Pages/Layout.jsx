@@ -8,7 +8,7 @@ const Layout = () => {
         <h1 className={layout.frase}>¡Con Sabor a Caribe!</h1>
         <img
           className={layout.logoLayout}
-          src="https://profesoradocaribeño.com.ar/imagenes/zunzuncito.png"
+          src={`${process.env.REACT_APP_BACKEND}/imagenes/zunzuncito.png`}
           alt="LogoApp"
         ></img>
       </div>

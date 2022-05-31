@@ -15,7 +15,7 @@ const Header = () => {
         <div className="s-cols-4 lg-cols-1 s-cross-center">
           <NavLink exact="true" to="/">
             <img
-              src={`https://profesoradocaribeño.com.ar/imagenes/logotipo.png`}
+              src={`${process.env.REACT_APP_BACKEND}/imagenes/logotipo.png`}
               alt="ZunzuncitoLogo"
               width="200px"
               className={`main-logotype logo-christmas s-cross-center s-relative s-cursor-pointer ${header.encabezado}`}
