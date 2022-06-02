@@ -25,44 +25,53 @@ export const Banner = ({
           {home ? (
             <div className="ed-grid m-grid-2">
               <div className={`main-banner__data`}>
-                <h1 className="main-banner__title">{title}</h1>
+                <h1 className={`main-banner__title ${banner.title}`}>
+                  {title}
+                </h1>
                 <p>{subtitle}</p>
-                <Link to="/cursos" className="button accent-color">
+                <Link
+                  to="/cursos"
+                  className={`button accent-color ${banner.button}`}
+                >
                   Ver cursos
                 </Link>
               </div>
-              <div className="img-container s-ratio-19-9">
+              <div className={`img-container s-ratio-19-9 ${banner.imagen2}`}>
                 <img
-                  src={`${process.ENV.REACT_APP_BACKEND}/imagenes/${poster}"`}
+                  src={`${process.env.REACT_APP_BACKEND}/imagenes/${poster}`}
                   alt="Curso actual"
                 />
-                {console.log(process.ENV.REACT_APP_BACKEND)}
               </div>
             </div>
           ) : courseBanner ? (
             <div className="ed-grid m-grid-3">
               <div className="main-banner__data m-cols-2">
-                <h1 className="main-banner__title s-mb-0">{title}</h1>
-                <p className="s-opacity-6">{subtitle}</p>
-                <p>{info}</p>
-                {speciality && (
+                <h1
+                  className={`main-banner__title s-mb-0 ${banner.courseTitle}`}
+                >
+                  {title}
+                </h1>
+                <p className={`s-opacity-6 ${banner.courseP}`}>{subtitle}</p>
+                <p className={`${banner.info}`}>{info}</p>
+                {/* {speciality && (
                   <p>
                     Este curso forma parte de la especialidad{" "}
-                    <Link to="/especialidades">{speciality}</Link>
+                    <Link to="/cursos">{speciality}</Link>
                   </p>
-                )}
+                )} */}
               </div>
               <div className="img-container s-ratio-16-9 m-cols-1">
                 <img
-                  src={`${process.env.REACT_APP_BACKEND}/imagenes/${poster}"`}
+                  src={`${process.env.REACT_APP_BACKEND}/imagenes/${poster}`}
                   alt="Curso actual"
+                  className={`${banner.imagen2}`}
                 />
               </div>
             </div>
           ) : (
             <div className="main-banner__data s-center">
-              <h1 className="main-banner__title">{title}</h1>
-              <p>{subtitle}</p>
+              <h1 className={`main-banner__title ${banner.title2}`}>{title}</h1>
+              <p className={`${banner.p2}`}>{subtitle}</p>
             </div>
           )}
         </div>

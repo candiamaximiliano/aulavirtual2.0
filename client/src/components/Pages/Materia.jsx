@@ -14,7 +14,7 @@ const Materia = () => {
   }, [dispatch, id]);
 
   return (
-    <>
+    <div className={materiaStyle.container}>
       {materia && (
         <>
           <Banner
@@ -30,65 +30,31 @@ const Materia = () => {
             poster={materia[0].portada}
             speciality={materia[0].belongsToCurso}
           />
-          <main className={`ed-grid lg-grid-10 ${materiaStyle.main}`}>
-            <div className="lg-cols-7">
-              <div className="course-features ed-grid lg-grid-3 l-block">
-                {/* <div>
-                  <h3 className="t4">¿Qué aprenderás?</h3>
-                  <ul dangerouslySetInnerHTML={{ __html: materia.you_learn }} />
-                </div>
-                <div>
-                  <h3 className="t4">Conocimientos previos</h3>
-                  <ul
-                    dangerouslySetInnerHTML={{ __html: materia.requirements }}
-                  />
-                </div> */}
-                {/* <div>
-                  <h3 className="t4">Nivel</h3>
-                  <p>
-                    {materia.nivel?.map((lvl, index) => (
-                      <ul key={index}>
-                        <li>{lvl}</li>
-                      </ul>
-                    ))}
-                  </p>
-                </div> */}
-              </div>
-              <h2>Clases</h2>
-              <div>
+          <main className={`${materiaStyle.main}`}>
+            <div className={materiaStyle.mainSubContainer}>
+              <h2>Listado de Clases</h2>
+              <div className={materiaStyle.listadoDeClases}>
                 {materia[0].clases?.map((cl) => (
-                  <Link to={`/clase/${cl.id}`}>
-                    <div key={cl.id}>
-                      <h3>{cl.nombre}</h3>
-                      <p>{cl.descripcion}</p>
-                      {/* <ul className="data-list">
-                      {cl.subjects?.map((s) => (
-                        <li key={s.subject.id}>
-                          <Link
-                            to={`/clase/${s.subject.id}`}
-                            className="color dark-color"
-                          >
-                            {s.subject.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul> */}
-                    </div>
-                  </Link>
+                  <div className={materiaStyle.claseContainer}>
+                    <Link
+                      className={materiaStyle.claseLink}
+                      to={`/clase/${cl.id}`}
+                    >
+                      <div className={materiaStyle.titleContainer} key={cl.id}>
+                        <h4>{cl.nombre}</h4>
+                      </div>
+                      <div className={materiaStyle.descriptionContainer}>
+                        <p>{cl.descripcion}</p>
+                      </div>
+                    </Link>
+                  </div>
                 ))}
               </div>
             </div>
-            {/* <div className="lg-cols-3">
-              <h2 className="t3">Profesor/es</h2>
-              <ul>
-                materia[0].clases[0].profesores?.map
-              </ul>
-              <p>Maxi Candia</p>
-            </div> */}
           </main>
         </>
       )}
-    </>
+    </div>
   );
 };
 

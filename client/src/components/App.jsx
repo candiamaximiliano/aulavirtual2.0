@@ -16,6 +16,7 @@ import Layout from "./Pages/Layout";
 import Page404 from "./Pages/Page404";
 import Unauthorized from "./Pages/Unauthorized";
 import Header from "./Organisms/Header";
+import Perfil from "./Pages/Perfil";
 
 const App = () => (
   <Router>
@@ -38,6 +39,7 @@ const App = () => (
         <Route path="/materias/:id" element={<Materia />} />
         <Route path="/profesores" element={<Profesores />} />
         <Route path="/clase/:id" element={<Clase />} />
+        <Route path="/perfil" element={<Perfil />} />
       </Route>
 
       {/* <Route element={<Protected allowedRoles={[profesor]} />}>

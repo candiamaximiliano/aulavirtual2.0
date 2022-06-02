@@ -35,7 +35,7 @@ server.use(cors());
 server.use(fileUpload());
 server.use(express.static("assets"));
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", backend); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", backend2); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",

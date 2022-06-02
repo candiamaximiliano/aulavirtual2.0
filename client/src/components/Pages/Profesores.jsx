@@ -15,7 +15,7 @@ const Teachers = () => {
     <>
       <Banner
         color="third-color"
-        imagen={{
+        image={{
           src: "https://static.vecteezy.com/system/resources/previews/002/294/885/non_2x/digital-classroom-web-banner-design-student-watching-teacher-on-online-web-education-platform-online-education-digital-classroom-e-learning-concept-header-or-footer-banner-free-vector.jpg",
           alt: "Banner profesores",
         }}
@@ -28,9 +28,9 @@ const Teachers = () => {
           {profesores?.map((t) => (
             <Teacher
               key={t.id}
-              picture={t.picture}
-              name={t.name}
-              country={t.country}
+              picture="{t.picture}"
+              name=/* {t.nombre} */"Maxi Candia"
+              country=/* {t.pais} */"Argentina"
             />
           ))}
         </main>

@@ -13,7 +13,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={home.body}>
       <Banner
         color="dark-color"
         image=""
@@ -25,7 +25,7 @@ const Home = () => {
 
       <main className={`ed-grid m-grid-2 ${home.main}`}>
         <div className="l-section m-cols-2">
-          <h2>Cartelera de anuncios</h2>
+          <h2 className={home.title}>Cartelera de anuncios</h2>
           {anuncios ? (
             <div>
               {anuncios?.map((p) => (
@@ -67,7 +67,7 @@ const Home = () => {
           </ul>
         </div> */}
       </main>
-    </>
+    </div>
   );
 };
 

@@ -17,9 +17,23 @@
 
 .imageContainer {
   max-width: 500px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .coverImage {
   border-radius: 8px;
   object-fit: cover;
+}
+
+.title {
+  font-family: var(--bebas);
+}
+
+p, b {
+  font-family: var(--montserrat);
+}
+
+p {
+  margin-top: 3%;
 }

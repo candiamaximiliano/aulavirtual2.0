@@ -1,54 +1,49 @@
 import React, { useEffect } from "react";
-import Vimeo from "@u-wave/react-vimeo";
-import { getClase, getMateria } from "../../redux/actionCreators";
+import { getClase } from "../../redux/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import claseStyle from "../../styles/clase.module.css";
+import InfiniteScrollComponent from "../Organisms/InfiniteScroll";
 
 const Clase = () => {
   const dispatch = useDispatch();
+  const { id } = useParams();
   const clase = useSelector((state) => state.claseReducer.clase);
-  const materia = useSelector((state) => state.materiaReducer.materia);
   useEffect(() => {
-    dispatch(getMateria(1));
-    dispatch(getClase(1));
-  }, [dispatch]);
+    dispatch(getClase(id));
+  }, [dispatch, id]);
 
   return (
-    <div className="class-page-container background dark-color">
-      {clase && materia && (
-        <div className="ed-grid lg-grid-12">
-          <div className="lg-cols-8 ">
-            <div>
-              <Vimeo video={clase.video} autoplay width={780} />
+    <div className={claseStyle.container}>
+      {clase && (
+        <>
+          <div className={claseStyle.titleContainer}>
+            <h3 className={claseStyle.title}>{clase[0].nombre}</h3>
+            <h6 className={claseStyle.subtitle}>
+              Esta clase pertenece a la materia{" "}
+              <strong>{clase[0].belongsToMateria}</strong> del curso{" "}
+              <strong>{clase[0].belongsToCurso}</strong>
+            </h6>
+          </div>
+          <div className={claseStyle.dataContainer}>
+            <div className={claseStyle.descripcionContainer}>
+              <p>{clase[0].descripcion}</p>
             </div>
-            <div>
-              <h1 className="">{clase.nombre}</h1>
-              <span>{materia.nombre}</span>
+            <div className={claseStyle.profesorContainer}>
+              <h6>Clase a cargo de:</h6>
+              <ul className={claseStyle.ul}>
+                {clase[0].profesores.map((profesor, index) => (
+                  <li className={claseStyle.li} key={index}>
+                    {profesor}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
-          <div className="lg-cols-4">
-            <div>
-              <h2 className="t3">Temario del curso</h2>
-              {materia.clases?.map((cl) => (
-                <div key={cl.id}>
-                  <h3>{cl.title}</h3>
-                  <ul className="data-list">
-                    {cl.subjects?.map((s) => (
-                      <li key={s.subject.id}>
-                        <Link
-                          to={`/clase/${s.subject.id}`}
-                          className="color light-color"
-                        >
-                          {s.subject.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+          <div className={claseStyle.playerContainer}>
+            <InfiniteScrollComponent data={clase[0].fragmentos} />
           </div>
-        </div>
+        </>
       )}
     </div>
   );

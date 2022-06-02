@@ -1,0 +1,112 @@
+.background {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin: 3%;
+  width: 90%;
+  height: 100%;
+  padding: 1%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileContainer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  width: 40%;
+  margin: 0.5%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5%;
+}
+
+.profileImage {
+  background-color: rgba(242, 242, 242, 0.902);
+  border: 1.5px solid rgba(224, 224, 224, 0.744);
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+  overflow: hidden;
+  padding: 2%;
+}
+
+.imagen {
+  height: 100%;
+  object-fit: contain !important;
+  max-width: none !important;
+}
+
+.information {
+  font-family: var(--bebas);
+  margin: 1%;
+}
+
+.button {
+  border: none;
+  background-color: var(--de-york);
+  border-radius: 8px;
+  padding: 2%;
+  margin-bottom: 3%;
+  font-family: var(--montserrat);
+  box-shadow: 1px 1px 5px var(--emperor);
+  color: floralwhite;
+  text-shadow: 1px 1px 2px var(--emperor);
+}
+
+.userContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 8px;
+  width: 60%;
+  margin: 0.5%;
+}
+
+.content1 {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+  padding: 1%;
+  margin: 1% 0% 1% 0%;
+}
+
+.content2 {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  justify-content: center;
+  width: 100%;
+  height: 20%;
+  padding: 1%;
+  margin: 1% 0% 1% 0%;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+h5 {
+  margin: 1% 2% 1% 2%;
+  font-family: var(--bebas);
+}
+
+p {
+  margin: 1% 2% 1% -0.5%;
+  font-family: var(--nunito);
+  font-size: 1.05em;
+}

@@ -1,0 +1,78 @@
+.container {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin: 2%;
+  padding: 2%;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 3em;
+}
+
+.subtitle {
+  font-size: 1em;
+  font-family: var(--montserrat);
+  color: rgba(100, 100, 100, 0.7);
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.descripcionContainer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  min-height: 100px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+  width: 60%;
+  margin: 2%;
+}
+
+.profesorContainer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  min-height: 100px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2% 2% 2% 0;
+}
+
+.ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.li {
+  list-style-type: none;
+}
+
+.playerContainer {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+

@@ -58,12 +58,13 @@ const Curso = () => {
               <h2>Materias</h2>
               <div className={cursoStyle.temario}>
                 {curso[0].materia?.map((cr) => (
-                  <div key={cr.id}>
+                  <div className={cursoStyle.materia} key={cr.id}>
                     <div className="ed-grid m-grid-3">
                       <Link to={`/materias/${cr.id}`}>
                         <img
-                          src={`${process.env.REACT_APP_BACKEND}/imagenes/prueba.png`}
-                          /* {cr.portada} */ alt={cr.nombre}
+                          src={`${process.env.REACT_APP_BACKEND}/imagenes/${cr.portada}`}
+                          alt={cr.nombre}
+                          className={cursoStyle.imagen}
                         />
                       </Link>
                       <div className="m-cols-2">

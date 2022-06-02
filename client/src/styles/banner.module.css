@@ -3,10 +3,49 @@
   opacity: 0.5;
 }
 
+.imagen2 {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
 .data {
   background-color: rgba(255, 255, 255, 0.5);
   margin: 2%;
   padding: 3%;
   border-radius: 8px;
   width: 95%;
+}
+
+.title {
+  font-family: var(--bebas);
+}
+
+.button {
+  margin-top: 3%;
+}
+
+p {
+  font-family: var(--montserrat);
+}
+
+.title2 {
+  font-size: 3em;
+}
+
+.p2 {
+  font-family: var(--montserrat);
+  font-size: 1.5em;
+}
+
+.courseTitle {
+  font-size: 4em;
+}
+
+.courseP {
+  font-size: 1.5em;
+}
+
+.info {
+  font-family: var(--montserrat);
+  font-size: 1.02em;
 }

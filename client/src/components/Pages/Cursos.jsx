@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllCursos } from "../../redux/actionCreators";
 import { Banner } from "../Organisms/Banner";
 import { Card } from "../Organisms/Card";
+import style from "../../styles/cursos.module.css";
 
 const Cursos = () => {
   const dispatch = useDispatch();
@@ -12,14 +13,14 @@ const Cursos = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className={style.container}>
       <Banner
         color="first-color"
         image={{
-          src: `${process.env.REACT_APP_BACKEND}/imagenes/prueba.png`,
+          src: `${process.env.REACT_APP_BACKEND}/imagenes/instructorado.png`,
           alt: "alt",
         }}
-        title="Cursos"
+        title="Cursos y Especializaciones"
         subtitle="Domina una tecnología con las rutas de aprendizaje que te ofrecemos"
       />
       {cursos && (
@@ -35,7 +36,7 @@ const Cursos = () => {
           ))}
         </main>
       )}
-    </>
+    </div>
   );
 };
 

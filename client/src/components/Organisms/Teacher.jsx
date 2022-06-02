@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Teacher = (picture, name, country) => {
+export const Teacher = ({ picture, name, country }) => {
   return (
     <article>
       <div className="s-px-4">

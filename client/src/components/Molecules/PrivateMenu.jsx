@@ -13,7 +13,7 @@ export const PrivateMenu = () => {
     <div>
       <ul className={privateMenu.liContainer}>
         <li className={privateMenu.itemUser}>
-          <NavLink className={privateMenu.user} to="/profile">
+          <NavLink className={privateMenu.user} to="/perfil">
             <i
               className={`fa-solid fa-user-large ${privateMenu.profileIcon}`}
             ></i>
