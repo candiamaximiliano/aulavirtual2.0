@@ -14,7 +14,7 @@
 .profileContainer {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 8px;
-  width: 40%;
+  width: 30%;
   margin: 0.5%;
   height: 100%;
   display: flex;
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2%;
+  margin: 5%;
   overflow: hidden;
   padding: 2%;
 }
@@ -54,11 +54,16 @@
   background-color: var(--de-york);
   border-radius: 8px;
   padding: 2%;
-  margin-bottom: 3%;
+  margin-bottom: 5.5%;
   font-family: var(--montserrat);
   box-shadow: 1px 1px 5px var(--emperor);
   color: floralwhite;
   text-shadow: 1px 1px 2px var(--emperor);
+  cursor: not-allowed;
+}
+
+.button:hover{
+  cursor: not-allowed;
 }
 
 .userContent {
@@ -68,7 +73,7 @@
   align-items: center;
   background-color: transparent;
   border-radius: 8px;
-  width: 60%;
+  width: 70%;
   margin: 0.5%;
 }
 
@@ -100,12 +105,12 @@
   text-align: center;
 }
 
-h5 {
+.h5 {
   margin: 1% 2% 1% 2%;
   font-family: var(--bebas);
 }
 
-p {
+.p {
   margin: 1% 2% 1% -0.5%;
   font-family: var(--nunito);
   font-size: 1.05em;

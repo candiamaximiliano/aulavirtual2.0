@@ -1,8 +1,8 @@
-const { DataTypes } = require('sequelize')
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    'Provincia',
+    "Provincia",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -11,9 +11,9 @@ module.exports = (sequelize) => {
       },
       NOMBRE_PROVINCIA: {
         type: DataTypes.STRING,
-        defaultValue: 'Sin definir',
+        defaultValue: "Sin definir",
       },
     },
     { timestamps: false }
-  )
-}
+  );
+};

@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-h2 {
+.h2 {
   font-family: var(--rajawali);
   font-size: 3em;
 }
@@ -67,7 +67,7 @@ h2 {
   align-items: flex-start;
 }
 
-h4 {
+.h4 {
   font-size: 1.8em !important;
   margin: 0;
 }

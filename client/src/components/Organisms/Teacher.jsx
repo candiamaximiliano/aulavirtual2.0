@@ -1,16 +1,30 @@
 import React from "react";
+import teacherStyle from "../../styles/teacher.module.css";
 
-export const Teacher = ({ picture, name, country }) => {
+export const Teacher = ({
+  nombre,
+  apellido,
+  imagen,
+  pais,
+  provincia,
+  ciudad,
+}) => {
   return (
-    <article>
-      <div className="s-px-4">
-        <div className="img-container circle s-mb-2">
-          <img src={picture} alt={name} />
+    <article className={teacherStyle.article}>
+      <div className={teacherStyle.container}>
+        <div className={teacherStyle.imagenContainer}>
+          <img
+            className={teacherStyle.imagen}
+            src={`${process.env.REACT_APP_BACKEND}/imagenes/${imagen}.png`}
+            alt={nombre}
+          />
         </div>
-      </div>
-      <div className="s-center">
-        <p className="t3 s-mb-1">{name}</p>
-        <p>{country}</p>
+        <div className={teacherStyle.dataContainer}>
+          <p className={teacherStyle.name}>{`${nombre} ${apellido}`}</p>
+          <p className={teacherStyle.ciudad}>{`${ciudad}, ${provincia}`}</p>
+          <p className={teacherStyle.pais}>{pais}</p>
+        </div>
+        <button className={teacherStyle.button}>Enviar Mensaje</button>
       </div>
     </article>
   );

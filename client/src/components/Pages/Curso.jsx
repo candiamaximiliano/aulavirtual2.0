@@ -35,18 +35,22 @@ const Curso = () => {
                 className={`course-features ed-grid lg-grid-3 s-border s-pxy-2 ${cursoStyle.features}`}
               >
                 <div className={cursoStyle.card}>
-                  <h3 className="t4">¿Qué aprenderás?</h3>
-                  <ul>
-                    {curso[0].habilidades?.map((a, index) => (
-                      <li key={index}>{a}</li>
+                  <h3 className="t4">Conocimientos previos</h3>
+                  <ul className={cursoStyle.ul}>
+                    {curso[0].conocimientos?.map((a, index) => (
+                      <li className={cursoStyle.li} key={index}>
+                        {a}
+                      </li>
                     ))}
                   </ul>
                 </div>
                 <div className={cursoStyle.card}>
-                  <h3 className="t4">Conocimientos previos</h3>
-                  <ul>
-                    {curso[0].conocimientos?.map((a, index) => (
-                      <li key={index}>{a}</li>
+                  <h3 className="t4">¿Qué aprenderás?</h3>
+                  <ul className={cursoStyle.ul}>
+                    {curso[0].habilidades?.map((a, index) => (
+                      <li className={cursoStyle.li} key={index}>
+                        {a}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -55,7 +59,7 @@ const Curso = () => {
                   <p>{curso[0].nivel}</p>
                 </div>
               </div>
-              <h2>Materias</h2>
+              <h2 className={cursoStyle.h2}>Lista de materias</h2>
               <div className={cursoStyle.temario}>
                 {curso[0].materia?.map((cr) => (
                   <div className={cursoStyle.materia} key={cr.id}>
@@ -68,8 +72,8 @@ const Curso = () => {
                         />
                       </Link>
                       <div className="m-cols-2">
-                        <h3>{cr.nombre}</h3>
-                        <p>{cr.informacion}</p>
+                        <h3 className={cursoStyle.h3}>{cr.nombre}</h3>
+                        <p className={cursoStyle.p}>{cr.informacion}</p>
                       </div>
                     </div>
                   </div>

@@ -2,7 +2,6 @@ import React from "react";
 import publication from "../../styles/publication.module.css";
 
 export const Publication = ({ coverImage, title, subtitle, url, content }) => {
-  console.log(coverImage);
   return (
     <article className={`publication l-block ${publication.article}`}>
       <div className={`publication__container ${publication.container}`}>
@@ -18,10 +17,10 @@ export const Publication = ({ coverImage, title, subtitle, url, content }) => {
             {title}
           </h2>
           <span>
-            <b>{subtitle}</b>
+            <b className={publication.b}>{subtitle}</b>
           </span>
           <div className="publication__content">
-            <p>{content}</p>
+            <p className={publication.p}>{content}</p>
           </div>
         </div>
       </div>

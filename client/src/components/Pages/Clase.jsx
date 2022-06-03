@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getClase } from "../../redux/actionCreators";
+import { getClase, getMateria } from "../../redux/actionCreators";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import claseStyle from "../../styles/clase.module.css";
@@ -9,8 +9,10 @@ const Clase = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const clase = useSelector((state) => state.claseReducer.clase);
+  const materia = useSelector((state) => state.materiaReducer.materia);
   useEffect(() => {
     dispatch(getClase(id));
+    dispatch(getMateria(id));
   }, [dispatch, id]);
 
   return (
@@ -27,10 +29,12 @@ const Clase = () => {
           </div>
           <div className={claseStyle.dataContainer}>
             <div className={claseStyle.descripcionContainer}>
-              <p>{clase[0].descripcion}</p>
+              <p className={claseStyle.p}>{clase[0].descripcion}</p>
             </div>
             <div className={claseStyle.profesorContainer}>
-              <h6>Clase a cargo de:</h6>
+              <h6 className={claseStyle.h6}>
+                <strong>Clase a cargo de:</strong>
+              </h6>
               <ul className={claseStyle.ul}>
                 {clase[0].profesores.map((profesor, index) => (
                   <li className={claseStyle.li} key={index}>
@@ -41,7 +45,10 @@ const Clase = () => {
             </div>
           </div>
           <div className={claseStyle.playerContainer}>
-            <InfiniteScrollComponent data={clase[0].fragmentos} />
+            <InfiniteScrollComponent
+              data={clase[0].fragmentos}
+              portada={materia[0].portada}
+            />
           </div>
         </>
       )}

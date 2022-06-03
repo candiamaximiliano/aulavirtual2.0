@@ -27,8 +27,20 @@
   margin-top: 1%;
 }
 
-h3 {
+.h3 {
   font-family: var(--bebas);
   text-align: center;
   font-size: 2em;
+}
+
+.order1 {
+  order: 1 !important;
+}
+
+.order2 {
+  order: 2 !important;
+}
+
+.order3 {
+  order: 3 !important;
 }

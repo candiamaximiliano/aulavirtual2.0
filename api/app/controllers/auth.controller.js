@@ -1,6 +1,13 @@
 const Op = require("sequelize").Op;
 const config = require("../config/auth.config");
-const { User, Role, RefreshToken } = require("../config/db.config");
+const {
+  User,
+  Role,
+  RefreshToken,
+  Pais,
+  Provincia,
+  Ciudad,
+} = require("../config/db.config");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
@@ -16,6 +23,9 @@ exports.signup = async (req, res) => {
     dni,
     fechaDeNacimiento,
     direccion,
+    pais,
+    provincia,
+    ciudad,
     numeroDeContacto,
     consentimientoWhatsapp,
   } = req.body;
@@ -34,6 +44,36 @@ exports.signup = async (req, res) => {
     consentimientoWhatsapp,
   })
     .then((user) => {
+      if (req.body.pais) {
+        Pais.findOne({
+          where: {
+            NOMBRE_PAIS: req.body.pais,
+          },
+        }).then((pais) => {
+          user.setPai(pais);
+        });
+      }
+
+      if (req.body.provincia) {
+        Provincia.findOne({
+          where: {
+            NOMBRE_PROVINCIA: req.body.provincia,
+          },
+        }).then((provincia) => {
+          user.setProvincium(provincia);
+        });
+      }
+
+      if (req.body.ciudad) {
+        Ciudad.findOne({
+          where: {
+            NOMBRE_CIUDAD: req.body.ciudad,
+          },
+        }).then((ciudad) => {
+          user.setCiudad(ciudad);
+        });
+      }
+
       if (req.body.roles) {
         Role.findAll({
           where: {
@@ -81,10 +121,22 @@ exports.signin = (req, res) => {
         });
       }
       let authorities = [];
+      let pais;
+      let provincia;
+      let ciudad;
       await user.getRoles().then((roles) => {
         for (let i = 0; i < roles.length; i++) {
           authorities.push("ROLE_" + roles[i].name.toUpperCase());
         }
+      });
+      await user.getPai().then((p) => {
+        pais = p;
+      });
+      await user.getProvincium().then((pr) => {
+        provincia = pr;
+      });
+      await user.getCiudad().then((c) => {
+        ciudad = c;
       });
       const token = jwt.sign(
         {
@@ -97,6 +149,9 @@ exports.signin = (req, res) => {
           dni: user.dni,
           fechaDeNacimiento: user.fechaDeNacimiento,
           direccion: user.direccion,
+          pais: pais,
+          provincia: provincia,
+          ciudad: ciudad,
           numeroDeContacto: user.numeroDeContacto,
           roles: authorities,
         },
@@ -152,6 +207,9 @@ exports.refreshToken = async (req, res) => {
         dni: user.dni,
         fechaDeNacimiento: user.fechaDeNacimiento,
         direccion: user.direccion,
+        pais: user.pais,
+        provincia: user.provincia,
+        ciudad: user.ciudad,
         numeroDeContacto: user.numeroDeContacto,
         roles: authorities,
       },

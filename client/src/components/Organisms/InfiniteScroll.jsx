@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const LIMIT = 5;
 
-const InfiniteScrollComponent = ({ data }) => {
+const InfiniteScrollComponent = ({ data, portada }) => {
   const [postData, setPostData] = useState(data?.slice(0, LIMIT));
   const [visible, setVisible] = useState(LIMIT);
   const [hasMore, setHasMore] = useState(true);
@@ -25,7 +25,7 @@ const InfiniteScrollComponent = ({ data }) => {
     }
   };
 
-  const [video, setVideo] = useState("vimeo");
+  const [video, setVideo] = useState("clase");
   const [recurso, setRecurso] = useState(["Sin recursos disponibles"]);
 
   const handleVideo = (fragmento) => {
@@ -53,7 +53,7 @@ const InfiniteScrollComponent = ({ data }) => {
                 <button
                   className={infiniteStyle.button}
                   key={fragmento.id}
-                  onClick={({ fragmento }) => handleVideo(fragmento)}
+                  onClick={() => handleVideo(fragmento)}
                 >
                   <li className={infiniteStyle.li}>{fragmento.nombre}</li>
                 </button>
@@ -65,26 +65,35 @@ const InfiniteScrollComponent = ({ data }) => {
       </div>
       <div className={infiniteStyle.vimeoContainer}>
         <div className={infiniteStyle.vimeoSubContainer}>
-          {video === "vimeo" ? (
+          {video === "clase" ? (
             <img
               className={infiniteStyle.vimeo}
-              src="http://localhost:8080/imagenes/sinvideo.png"
+              src={`${process.env.REACT_APP_BACKEND}/imagenes/visualizarcontenido.png`}
+              alt=""
+            />
+          ) : video === "vimeo" ? (
+            <img
+              className={infiniteStyle.vimeo}
+              src={`${process.env.REACT_APP_BACKEND}/imagenes/sinvideo.png`}
               alt=""
             />
           ) : (
-            <Vimeo
-              className={infiniteStyle.vimeo}
-              video={video}
-              autoplay
-              width={780}
-            />
+            <Vimeo className={infiniteStyle.vimeo} video={video} height={400} />
           )}
         </div>
         <div className={infiniteStyle.recursos}>
           <ul className={infiniteStyle.ul}>
+            <h5 className={infiniteStyle.h5}>
+              <i
+                className={`fa-solid fa-download ${infiniteStyle.download}`}
+              ></i>
+              {"  Recursos:"}
+            </h5>
             {recurso?.map((recurso, index) => (
               <Link
-                to={`${process.env.REACT_APP_BACKEND}/imagenes/${recurso}`}
+                to={`/imagenes/${recurso}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={index}
                 className={infiniteStyle.Link}
               >

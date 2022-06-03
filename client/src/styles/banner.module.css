@@ -24,12 +24,13 @@
   margin-top: 3%;
 }
 
-p {
+.p {
   font-family: var(--montserrat);
 }
 
 .title2 {
-  font-size: 3em;
+  font-size: 4em;
+  font-family: var(--rajawali);
 }
 
 .p2 {
@@ -39,10 +40,12 @@ p {
 
 .courseTitle {
   font-size: 4em;
+  font-family: var(--rajawali);
 }
 
 .courseP {
   font-size: 1.5em;
+  font-family: var(--montserrat);
 }
 
 .info {

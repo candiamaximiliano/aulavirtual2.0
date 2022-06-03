@@ -4,7 +4,6 @@ import perfil from "../../styles/perfil.module.css";
 
 const Perfil = () => {
   const user = useSelector((state) => state.auth?.user);
-  console.log(user);
 
   return (
     <div className={perfil.background}>
@@ -24,29 +23,45 @@ const Perfil = () => {
       <div className={perfil.userContent}>
         <div className={perfil.content1}>
           <div className={perfil.data}>
-            <h5>Usuario: </h5> <p>{`${user.usuario}`}</p>
+            <h5 className={perfil.h5}>Usuario: </h5>
+            <p className={perfil.p}>{`${user.usuario}`}</p>
           </div>
           <div className={perfil.data}>
-            <h5>Email: </h5> <p>{`${user.email}`}</p>
+            <h5 className={perfil.h5}>Email: </h5>{" "}
+            <p className={perfil.p}>{`${user.email}`}</p>
           </div>
           <div className={perfil.data}>
-            <h5>DNI: </h5> <p>{`${user.dni}`}</p>
+            <h5 className={perfil.h5}>DNI: </h5>{" "}
+            <p className={perfil.p}>{`${user.dni}`}</p>
           </div>
           <div className={perfil.data}>
-            <h5>Fecha de Nacimiento: </h5> <p>{`${user.fechaDeNacimiento}`}</p>
+            <h5 className={perfil.h5}>Fecha de Nacimiento: </h5>{" "}
+            <p className={perfil.p}>{`${user.fechaDeNacimiento}`}</p>
           </div>
           <div className={perfil.data}>
-            <h5>Dirección: </h5> <p>{`${user.direccion}`}</p>
+            <h5 className={perfil.h5}>Dirección: </h5>{" "}
+            <p
+              className={perfil.p}
+            >{`${user.direccion}, ${user.ciudad.NOMBRE_CIUDAD}, ${user.provincia.NOMBRE_PROVINCIA}, ${user.pais.NOMBRE_PAIS}`}</p>
           </div>
           <div className={perfil.data}>
-            <h5>Celular: </h5> <p>{`${user.numeroDeContacto}`}</p>
+            <h5 className={perfil.h5}>Celular: </h5>{" "}
+            <p className={perfil.p}>{`${user.numeroDeContacto}`}</p>
           </div>
         </div>
         <div className={perfil.content2}>
           <div className={perfil.data}>
-            <h5>Formación en curso:</h5>
+            <h5 className={perfil.h5}>Formación en curso:</h5>
             {user.roles?.map((rol) => (
-              <p>{rol}</p>
+              <p className={perfil.p}>
+                {rol === process.env.REACT_APP_INSTRUCTORADO
+                  ? "Instructorado en Salsa y Bachata"
+                  : rol === process.env.REACT_APP_ESPECIALIZACION
+                  ? "Especialización en Estilo y Coreografía"
+                  : rol === process.env.REACT_APP_PROFESORADO
+                  ? "Profesorado en Ritmos Caribeños"
+                  : "Actualmente no formas parte de ninguna capacitación"}
+              </p>
             ))}
           </div>
         </div>

@@ -16,8 +16,6 @@ const getClases = async (req, res, next) => {
           model: Materia,
           attributes: ["id", "nombre"],
         },
-      ],
-      include: [
         {
           model: Fragmento,
           attributes: ["id", "nombre", "url", "recursos"],
@@ -50,8 +48,6 @@ const getClaseById = async (req, res, next) => {
           model: Materia,
           attributes: ["id", "nombre"],
         },
-      ],
-      include: [
         {
           model: Fragmento,
           attributes: ["id", "nombre", "url", "recursos"],

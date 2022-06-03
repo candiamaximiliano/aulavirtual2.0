@@ -20,17 +20,19 @@ const Teachers = () => {
           alt: "Banner profesores",
         }}
         title="Nuestros profesores"
-        subtitle="Este plantel docente esta altamente calificado para guiarte en tu
-              educación"
+        subtitle="Este plantel docente esta altamente calificado para guiarte en tu educación"
       />
       {profesores && (
         <main className="ed-grid m-grid-3 lg-grid-4 row-gap">
           {profesores?.map((t) => (
             <Teacher
               key={t.id}
-              picture="{t.picture}"
-              name=/* {t.nombre} */"Maxi Candia"
-              country=/* {t.pais} */"Argentina"
+              imagen={t.imagen}
+              nombre={t.nombre}
+              apellido={t.apellido}
+              pais={t.Pai.NOMBRE_PAIS}
+              provincia={t.Provincium.NOMBRE_PROVINCIA}
+              ciudad={t.Ciudad.NOMBRE_CIUDAD}
             />
           ))}
         </main>

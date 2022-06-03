@@ -93,11 +93,6 @@ div::-webkit-scrollbar-thumb {
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Nunito&display=swap');
 
-
-h1 {
-  font-family: Rajawali;
-}
-
 h1, h2, h3, h4, h5, h6, p, span {
   color: var(--emperor);
 }

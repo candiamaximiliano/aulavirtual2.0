@@ -1,4 +1,42 @@
-const { User } = require("../config/db.config");
+const { User, Role, Pais, Ciudad, Provincia } = require("../config/db.config");
+const ROLES = require("../config/roles.config");
+
+exports.getProfesores = async (req, res, next) => {
+  try {
+    const usuarios = await User.findAll({
+      attributes: ["id", "nombre", "apellido", "imagen"],
+      include: [
+        {
+          model: Role,
+          attributes: ["name"],
+        },
+        {
+          model: Pais,
+          attributes: ["NOMBRE_PAIS"],
+        },
+        {
+          model: Provincia,
+          attributes: ["NOMBRE_PROVINCIA"],
+        },
+        {
+          model: Ciudad,
+          attributes: ["NOMBRE_CIUDAD"],
+        },
+      ],
+    });
+
+    const profesores = [];
+    usuarios.forEach((user) => {
+      user.roles?.map((rol) => {
+        rol.name === ROLES.Profesor ? profesores.push(user) : null;
+      });
+    });
+    res.status(200).send(profesores);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};
 
 exports.putUser = async (req, res, next) => {
   try {

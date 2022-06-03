@@ -138,7 +138,6 @@ const Register = () => {
       let nombresCiudades = cities.map((el) => el.NOMBRE_CIUDAD);
       if (nombresCiudades.includes(e.target.value)) {
         let ciudad = cities.filter((el) => el.NOMBRE_CIUDAD === e.target.value);
-        // console.log(ciudad)
         setCountriesInfo((prevState) => {
           return { ...prevState, city: ciudad[0].NOMBRE_CIUDAD };
         });
@@ -351,18 +350,15 @@ const Register = () => {
 
       for (let prop in input) {
         if (input[prop] === "") {
-          // console.log(input[prop])
           if (prop === "imagen") {
             //NO CONTAMOS imagen
           } else {
-            // console.log(input[prop], prop, 'sumó')
             dataEmpty++;
           }
         }
       }
       for (let prop in errors) {
         if (errors[prop]) {
-          // console.log(errors[prop], prop, 'sumó')
           errorsCounter++;
         }
       }
@@ -372,7 +368,6 @@ const Register = () => {
       } else if (dataEmpty === 0 || errorsCounter === 0) {
         setTerms(false);
       }
-      // console.log(errorsCounter, dataEmpty)
     }
 
     if (termsAccepted === false) {
@@ -399,16 +394,11 @@ const Register = () => {
   const uploadUserFile = async (e) => {
     e.preventDefault();
     const code = uuidv4();
-    // console.log(code)
     const formData = new FormData();
     formData.append("file", file);
     formData.append("format", format);
     try {
-      const res = await api.post(
-        `/upload/imagenes/${code}.${format}`,
-        formData
-      );
-      console.log(res);
+      await api.post(`/upload/imagenes/${code}.${format}`, formData);
       setInput({
         ...input,
         [e.target.name]: code + "." + format,
@@ -425,18 +415,15 @@ const Register = () => {
 
     for (let prop in input) {
       if (input[prop] === "") {
-        // console.log(input[prop])
         if (prop === "imagen") {
           //NO CONTAMOS imagen
         } else {
-          // console.log(input[prop], prop, 'sumó')
           dataEmpty++;
         }
       }
     }
     for (let prop in errors) {
       if (errors[prop]) {
-        // console.log(errors[prop], prop, 'sumó')
         errorsCounter++;
       }
     }
@@ -450,7 +437,6 @@ const Register = () => {
     } else if (dataEmpty === 0 || errorsCounter === 0) {
       handleSubmitUser(e);
     }
-    // console.log(errorsCounter, dataEmpty)
   }
 
   return (

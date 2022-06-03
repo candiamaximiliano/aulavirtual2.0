@@ -30,10 +30,10 @@
   font-family: var(--bebas);
 }
 
-p, b {
+.p, .b {
   font-family: var(--montserrat);
 }
 
-p {
+.p {
   margin-top: 3%;
 }

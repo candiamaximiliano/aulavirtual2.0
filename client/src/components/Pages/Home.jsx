@@ -20,7 +20,7 @@ const Home = () => {
         title="Bienvenido a la experiencia más incleíble en educación online. Comienza hoy mismo a aprender"
         subtitle="Nuestro equipo ha desarrollado esta plataforma pensando en tí. Sabemos que estas buscando contenido de calidad. Aquí lo encontrarás"
         home={true}
-        poster="prueba.png"
+        poster="home.png"
       />
 
       <main className={`ed-grid m-grid-2 ${home.main}`}>
@@ -40,7 +40,7 @@ const Home = () => {
               ))}
             </div>
           ) : (
-            <p>No existen publicaciones</p>
+            <p className={home.p}>No existen publicaciones</p>
           )}
         </div>
         {/* <div>

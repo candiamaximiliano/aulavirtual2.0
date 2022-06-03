@@ -14,7 +14,8 @@
 }
 
 .title {
-  font-size: 3em;
+  font-size: 4em;
+  font-family: var(--rajawali);
 }
 
 .subtitle {
@@ -60,10 +61,12 @@
 .ul {
   margin: 0px;
   padding: 0px;
+  font-family: var(--montserrat);
 }
 
 .li {
   list-style-type: none;
+  font-family: var(--montserrat);
 }
 
 .playerContainer {
@@ -74,5 +77,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+}
+
+.p {
+  font-family: var(--montserrat);
+}
+
+.h6 {
+  font-family: var(--montserrat);
 }
 

@@ -32,7 +32,7 @@ const Materia = () => {
           />
           <main className={`${materiaStyle.main}`}>
             <div className={materiaStyle.mainSubContainer}>
-              <h2>Listado de Clases</h2>
+              <h2 className={materiaStyle.h2}>Listado de Clases</h2>
               <div className={materiaStyle.listadoDeClases}>
                 {materia[0].clases?.map((cl) => (
                   <div className={materiaStyle.claseContainer}>
@@ -41,7 +41,7 @@ const Materia = () => {
                       to={`/clase/${cl.id}`}
                     >
                       <div className={materiaStyle.titleContainer} key={cl.id}>
-                        <h4>{cl.nombre}</h4>
+                        <h4 className={materiaStyle.h4}>{cl.nombre}</h4>
                       </div>
                       <div className={materiaStyle.descriptionContainer}>
                         <p>{cl.descripcion}</p>
