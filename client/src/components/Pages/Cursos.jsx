@@ -21,7 +21,7 @@ const Cursos = () => {
           alt: "alt",
         }}
         title="Cursos y Especializaciones"
-        subtitle="Domina una tecnología con las rutas de aprendizaje que te ofrecemos"
+        subtitle="Aquí encontrarás las herramientas necesarias para desarrollarte profesionalmente"
       />
       {cursos && (
         <main className="ed-grid m-grid-3">

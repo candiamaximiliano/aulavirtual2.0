@@ -23,7 +23,7 @@ const Login = () => {
   const [usuario, setUsuario] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [loading, setLoading] = useState(false);
-  const [successful, setSuccessful] = useState(false);
+  const [successful, setSuccessful] = useState(true);
   if (loading) {
   }
 
@@ -48,10 +48,12 @@ const Login = () => {
     setLoading(true);
     dispatch(login(usuario, contraseña))
       .then(() => {
+        setSuccessful(true);
         navigate("/home");
         window.location.reload();
       })
       .catch(() => {
+        setSuccessful(false);
         setLoading(false);
       });
   };
@@ -102,6 +104,7 @@ const Login = () => {
               <span>Iniciar Sesión</span>
             </button>
           </div>
+          <br />
           {message && (
             <div className={style.formGroup}>
               <div

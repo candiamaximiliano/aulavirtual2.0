@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
+  width: 100vw;
 }
 
 .imageContainer {
@@ -14,15 +15,17 @@
 }
 
 .frase {
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
-  margin: 20px;
-  margin-bottom: 100px;
+  margin: 0px;
+  width: 100vw;
+  margin-bottom: 50px;
+  font-family: var(--rajawali);
 }
 
 img.logoLayout {
   object-fit: contain;
-  width: 50%;
+  width: 80%;
 }
 
 @keyframes moveInFromLeft {

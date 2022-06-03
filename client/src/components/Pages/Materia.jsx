@@ -34,8 +34,8 @@ const Materia = () => {
             <div className={materiaStyle.mainSubContainer}>
               <h2 className={materiaStyle.h2}>Listado de Clases</h2>
               <div className={materiaStyle.listadoDeClases}>
-                {materia[0].clases?.map((cl) => (
-                  <div className={materiaStyle.claseContainer}>
+                {materia[0].clases?.map((cl, index) => (
+                  <div key={index} className={materiaStyle.claseContainer}>
                     <Link
                       className={materiaStyle.claseLink}
                       to={`/clase/${cl.id}`}

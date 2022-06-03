@@ -780,6 +780,7 @@ const Register = () => {
               </div>
             </div>
           )}
+          <br />
           {message && (
             <div className={style.formGroup}>
               <div

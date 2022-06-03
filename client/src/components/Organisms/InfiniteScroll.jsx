@@ -49,7 +49,7 @@ const InfiniteScrollComponent = ({ data, portada }) => {
         >
           {postData?.map((fragmento) => {
             return (
-              <ol className={infiniteStyle.ul}>
+              <ol key={fragmento.id} className={infiniteStyle.ul}>
                 <button
                   className={infiniteStyle.button}
                   key={fragmento.id}

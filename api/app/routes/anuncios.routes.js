@@ -12,12 +12,9 @@ const router = Router();
 
 // router.get('/', getClases);
 
-router.get(
-  "/anuncios/:anuncioId",
-  /* [authJwt.verifyToken],  */ getAnuncioById
-);
+router.get("/anuncios/:anuncioId", [authJwt.verifyToken], getAnuncioById);
 
-router.get("/anuncios", /* [authJwt.verifyToken],  */ getAllAnuncios);
+router.get("/anuncios", [authJwt.verifyToken], getAllAnuncios);
 
 router.post(
   "/anuncios",

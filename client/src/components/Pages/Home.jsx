@@ -1,24 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Banner } from "../Organisms/Banner";
 import { getAllAnuncios } from "../../redux/actionCreators";
 import { Publication } from "../Organisms/Publication";
 import home from "../../styles/home.module.css";
+import Loading from "../Organisms/Spinner";
 
 const Home = () => {
   const anuncios = useSelector((state) => state.anuncioReducer.anuncios);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllAnuncios());
   }, [dispatch]);
 
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
+  /* loading ? (
+    <Loading />
+  ) : ( */
   return (
     <div className={home.body}>
       <Banner
         color="dark-color"
         image=""
-        title="Bienvenido a la experiencia más incleíble en educación online. Comienza hoy mismo a aprender"
-        subtitle="Nuestro equipo ha desarrollado esta plataforma pensando en tí. Sabemos que estas buscando contenido de calidad. Aquí lo encontrarás"
+        title={`Bienvenidos a la experiencia más increíble en educación caribeña online. Comenzá hoy mismo a aprender!`}
+        subtitle={`Nuestro equipo ha desarrollado esta plataforma pensando en vos. Sabemos que estas buscando contenido de calidad.
+        Acá lo encontrarás`}
         home={true}
         poster="home.png"
       />

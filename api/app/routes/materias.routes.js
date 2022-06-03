@@ -6,14 +6,15 @@ const {
   putMateria,
   deleteMateria,
 } = require("../controllers/materias.controller");
+const { authJwt } = require("../middlewares");
 
 const router = Router();
 
-router.get("/materias", getMaterias);
+router.get("/materias", [authJwt.verifyToken], getMaterias);
 
 router.post("/materias", postMateria);
 
-router.get("/materias/:id", getMateriaById);
+router.get("/materias/:id", [authJwt.verifyToken], getMateriaById);
 
 router.put("/materias/:id", putMateria);
 

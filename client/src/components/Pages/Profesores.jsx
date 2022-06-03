@@ -20,7 +20,7 @@ const Teachers = () => {
           alt: "Banner profesores",
         }}
         title="Nuestros profesores"
-        subtitle="Este plantel docente esta altamente calificado para guiarte en tu educación"
+        subtitle="Este plantel docente esta altamente calificado para guiarte en tu camino por los Ritmos Caribeños. Te invitamos a que los conozcas"
       />
       {profesores && (
         <main className="ed-grid m-grid-3 lg-grid-4 row-gap">
