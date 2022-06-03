@@ -42,15 +42,19 @@ exports.putUser = async (req, res, next) => {
   try {
     const { id } = req.params;
     const {
-      fotoDePerfil,
+      imagen,
       nombre,
       apellido,
       usuario,
       email,
+      contraseña,
       dni,
       fechaDeNacimiento,
       direccion,
+      provincia,
+      ciudad,
       numeroDeContacto,
+      consentimientoWhatsapp,
       roles,
     } = req.body;
 
@@ -58,11 +62,44 @@ exports.putUser = async (req, res, next) => {
       where: { id: id },
     });
 
+    if (req.body.provincia) {
+      Provincia.findOne({
+        where: {
+          NOMBRE_PROVINCIA: req.body.provincia,
+        },
+      }).then((provincia) => {
+        usuarioEncontrado.setProvincium(provincia);
+      });
+    }
+
+    if (req.body.ciudad) {
+      Ciudad.findOne({
+        where: {
+          NOMBRE_CIUDAD: req.body.ciudad,
+        },
+      }).then((ciudad) => {
+        usuarioEncontrado.setCiudad(ciudad);
+      });
+    }
+
+    if (req.body.roles) {
+      Role.findAll({
+        where: {
+          name: {
+            [Op.or]: req.body.roles,
+          },
+        },
+      }).then((roles) => {
+        usuarioEncontrado.setRoles(roles);
+      });
+    }
+
     usuarioEncontrado === null
       ? res.status(404).send("No se encontró una usuario con ese id")
       : await User.update(
           {
-            fotoDePerfil: fotoDePerfil,
+            imagen: imagen,
+            contraseña: contraseña,
             nombre: nombre,
             apellido: apellido,
             usuario: usuario,
@@ -70,10 +107,10 @@ exports.putUser = async (req, res, next) => {
             dni: dni,
             fechaDeNacimiento: fechaDeNacimiento,
             direccion: direccion,
+            provincia: provincia,
+            ciudad: ciudad,
             numeroDeContacto: numeroDeContacto,
-            instructorado: instructorado,
-            especializacion: especializacion,
-            profesorado: profesorado,
+            consentimientoWhatsapp: consentimientoWhatsapp,
             roles: roles,
           },
           { where: { id: id } }
