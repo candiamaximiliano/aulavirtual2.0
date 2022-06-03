@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 const sequelize = new Sequelize(
-  `postgres://${database.user}:${database.password}@${database.host}/profesorado`,
+  `postgres://${database.user}:${database.password}@${database.host}/profesorado-database`,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
