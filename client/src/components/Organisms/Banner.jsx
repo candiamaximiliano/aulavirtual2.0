@@ -24,11 +24,11 @@ export const Banner = ({
           />
           {home ? (
             <div className="ed-grid m-grid-2">
-              <div className={`main-banner__data`}>
+              <div className={`main-banner__data $`}>
                 <h1 className={`main-banner__title ${banner.title}`}>
                   {title}
                 </h1>
-                <p>{subtitle}</p>
+                <p className={banner.subtitle}>{subtitle}</p>
                 <Link
                   to="/cursos"
                   className={`button accent-color ${banner.button}`}
@@ -69,7 +69,7 @@ export const Banner = ({
               </div>
             </div>
           ) : (
-            <div className="main-banner__data s-center">
+            <div className={`main-banner__data s-center ${banner.main}`}>
               <h1 className={`main-banner__title ${banner.title2}`}>{title}</h1>
               <p className={`${banner.p2}`}>{subtitle}</p>
             </div>

@@ -17,6 +17,7 @@ import Page404 from "./Pages/Page404";
 import Unauthorized from "./Pages/Unauthorized";
 import Header from "./Organisms/Header";
 import Perfil from "./Pages/Perfil";
+import Spinner from "./Organisms/Spinner";
 
 const App = () => (
   <Router>
@@ -27,6 +28,7 @@ const App = () => (
       <Route path="/registro" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/unauthorized" element={<Unauthorized />} />
+      <Route path="/spinner" element={<Spinner />} />
 
       {/* we want to protect these routes */}
       <Route

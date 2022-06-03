@@ -35,7 +35,7 @@ const Curso = () => {
                 className={`course-features ed-grid lg-grid-3 s-border s-pxy-2 ${cursoStyle.features}`}
               >
                 <div className={cursoStyle.card}>
-                  <h3 className="t4">Conocimientos previos</h3>
+                  <h3 className="t4">¿Qué necesitás para cursar?</h3>
                   <ul className={cursoStyle.ul}>
                     {curso[0].conocimientos?.map((a, index) => (
                       <li className={cursoStyle.li} key={index}>
