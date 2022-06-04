@@ -53,7 +53,7 @@ const Perfil = () => {
           <div className={perfil.data}>
             <h5 className={perfil.h5}>Formación en curso:</h5>
             {user.roles?.map((rol) => (
-              <p className={perfil.p}>
+              <p className={perfil.roles}>
                 {rol === process.env.REACT_APP_INSTRUCTORADO
                   ? "Instructorado en Salsa y Bachata"
                   : rol === process.env.REACT_APP_ESPECIALIZACION

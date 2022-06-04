@@ -115,3 +115,9 @@
   font-family: var(--nunito);
   font-size: 1.05em;
 }
+
+.roles {
+  margin: 1% 2% 1% -0.5%;
+  font-family: var(--nunito);
+  font-size: 0.5em;
+}
