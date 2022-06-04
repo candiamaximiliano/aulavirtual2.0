@@ -1,5 +1,6 @@
 const { User, Role, Pais, Ciudad, Provincia } = require("../config/db.config");
 const ROLES = require("../config/roles.config");
+const Op = require("sequelize").Op;
 
 exports.getProfesores = async (req, res, next) => {
   try {
