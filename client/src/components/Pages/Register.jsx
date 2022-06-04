@@ -381,7 +381,7 @@ const Register = () => {
   const fileInput = useRef(null);
   const [file, setFile] = useState();
   const [format, setFormat] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(
     "ninguna imagen seleccionada"
   );
