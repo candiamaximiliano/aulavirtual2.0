@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.76e34810.css",
-    "main.js": "/static/js/main.426df366.js",
+    "main.css": "/static/css/main.4803242a.css",
+    "main.js": "/static/js/main.c6256a7f.js",
     "static/media/Rajawali.otf": "/static/media/Rajawali.0e565d7731573335a325.otf",
     "index.html": "/index.html",
-    "main.76e34810.css.map": "/static/css/main.76e34810.css.map",
-    "main.426df366.js.map": "/static/js/main.426df366.js.map"
+    "main.4803242a.css.map": "/static/css/main.4803242a.css.map",
+    "main.c6256a7f.js.map": "/static/js/main.c6256a7f.js.map"
   },
   "entrypoints": [
-    "static/css/main.76e34810.css",
-    "static/js/main.426df366.js"
+    "static/css/main.4803242a.css",
+    "static/js/main.c6256a7f.js"
   ]
 }
