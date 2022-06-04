@@ -57,9 +57,9 @@ const Perfil = () => {
                 {rol === process.env.REACT_APP_INSTRUCTORADO
                   ? " | Instructorado en Salsa y Bachata | "
                   : rol === process.env.REACT_APP_ESPECIALIZACION
-                  ? "Especialización en Estilo y Coreografía | "
+                  ? "| Especialización en Estilo y Coreografía | "
                   : rol === process.env.REACT_APP_PROFESORADO
-                  ? "Profesorado en Ritmos Caribeños | "
+                  ? "| Profesorado en Ritmos Caribeños | "
                   : rol === process.env.REACT_APP_ALUMNO
                   ? null
                   : rol === process.env.REACT_APP_ADMIN
