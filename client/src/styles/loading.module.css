@@ -1,4 +1,4 @@
-.container {
+/* .container {
   width: 100vw;
   height: 500px;
   padding: 10%;
@@ -17,7 +17,7 @@
   width: 30%;
   min-height: 50%;
   border-radius: 20px;
-}
+} */
 
 .spinner {
   width: 100px !important;
