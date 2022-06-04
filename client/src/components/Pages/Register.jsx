@@ -10,6 +10,7 @@ import { v4 as uuidv4 } from "uuid";
 import api from "../../services/api";
 import Swal from "sweetalert2";
 import Spinner from "../Organisms/Spinner";
+import { Modal, ModalBody, ModalFooter } from "reactstrap";
 import "animate.css";
 import style from "../../styles/register.module.css";
 
@@ -473,7 +474,12 @@ const Register = () => {
                     saveFile(e);
                   }}
                 />{" "}
-                {loading && <Spinner />}
+                <Modal>
+                  <ModalBody>
+                    <Spinner></Spinner>
+                  </ModalBody>
+                  <ModalFooter></ModalFooter>
+                </Modal>
                 <button
                   type="button"
                   className={style.fileButton}
