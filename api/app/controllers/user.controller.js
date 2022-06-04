@@ -59,7 +59,7 @@ exports.putUser = async (req, res, next) => {
     } = req.body;
 
     const usuarioEncontrado = await User.findOne({
-      where: { id: Number(id) },
+      where: { id: id },
     });
 
     if (req.body.provincia) {
