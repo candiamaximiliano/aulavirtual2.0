@@ -381,7 +381,7 @@ const Register = () => {
   const fileInput = useRef(null);
   const [file, setFile] = useState();
   const [format, setFormat] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [uploadSuccess, setUploadSuccess] = useState(
     "ninguna imagen seleccionada"
   );
@@ -474,11 +474,10 @@ const Register = () => {
                     saveFile(e);
                   }}
                 />{" "}
-                <Modal isOpen={loading}>
-                  <ModalBody>
+                <Modal className={style.modal} isOpen={loading}>
+                  <ModalBody className={style.modalBody}>
                     <Spinner></Spinner>
                   </ModalBody>
-                  <ModalFooter></ModalFooter>
                 </Modal>
                 <button
                   type="button"
