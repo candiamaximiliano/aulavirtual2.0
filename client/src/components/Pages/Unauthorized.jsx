@@ -7,7 +7,7 @@ const Unauthorized = () => (
     <div className={unauthorized.unauthorizedContainer}>
       <img
         className={unauthorized.error403}
-        src={`${process.env.REACT_APP_BACKEND}/imagenes/prueba.png`}
+        src={`${process.env.REACT_APP_BACKEND}/imagenes/403.png`}
         alt="Forbidden"
       />
       <Link className={unauthorized.regresar} to="/">
