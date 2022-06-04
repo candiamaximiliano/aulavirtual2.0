@@ -60,7 +60,14 @@ const Perfil = () => {
                   ? "Especialización en Estilo y Coreografía"
                   : rol === process.env.REACT_APP_PROFESORADO
                   ? "Profesorado en Ritmos Caribeños"
+                  : rol === process.env.REACT_APP_ALUMNO
+                  ? null
+                  : rol === process.env.REACT_APP_ADMIN
+                  ? null
+                  : rol === process.env.REACT_APP_PROFESOR
+                  ? null
                   : "Actualmente no formas parte de ninguna capacitación"}
+                {/* TODO: CORREGIR ESTA LOGICA QUE ESTA MAL */}
               </p>
             ))}
           </div>

@@ -405,7 +405,7 @@ const Register = () => {
       await api.post(`/upload/imagenes/${code}.${format}`, formData);
       setInput({
         ...input,
-        [e.target.name]: code + "." + format,
+        imagen: code + "." + format,
       });
       setLoading(false);
       Swal.fire("Imagen cargada con Exito", "", "success");
