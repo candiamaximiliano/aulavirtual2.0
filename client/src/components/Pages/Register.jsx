@@ -9,6 +9,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import api from "../../services/api";
 import Swal from "sweetalert2";
+import Spinner from "../Organisms/Spinner";
 import "animate.css";
 import style from "../../styles/register.module.css";
 
@@ -379,6 +380,7 @@ const Register = () => {
   const fileInput = useRef(null);
   const [file, setFile] = useState();
   const [format, setFormat] = useState("");
+  const [loading, setLoading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(
     "ninguna imagen seleccionada"
   );
@@ -393,6 +395,7 @@ const Register = () => {
 
   const uploadUserFile = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const code = uuidv4();
     const formData = new FormData();
     formData.append("file", file);
@@ -403,8 +406,10 @@ const Register = () => {
         ...input,
         [e.target.name]: code + "." + format,
       });
+      setLoading(false);
       Swal.fire("Imagen cargada con Exito", "", "success");
     } catch (ex) {
+      setLoading(false);
       console.log(ex);
     }
   };
@@ -468,6 +473,7 @@ const Register = () => {
                     saveFile(e);
                   }}
                 />{" "}
+                {loading && <Spinner />}
                 <button
                   type="button"
                   className={style.fileButton}

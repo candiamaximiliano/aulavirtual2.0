@@ -12,9 +12,12 @@ const router = Router();
 
 // router.get('/', getClases);
 
-router.get("/fragmentos/:fragmentoId", [authJwt.verifyToken], getFragmentoById);
+router.get(
+  "/fragmentos/:fragmentoId",
+  /* [authJwt.verifyToken], */ getFragmentoById
+);
 
-router.get("/fragmentos", [authJwt.verifyToken], getAllFragmentos);
+router.get("/fragmentos", /* [authJwt.verifyToken], */ getAllFragmentos);
 
 router.post(
   "/fragmentos",

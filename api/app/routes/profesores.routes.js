@@ -4,7 +4,7 @@ const { authJwt } = require("../middlewares");
 
 const router = Router();
 
-router.get("/profesores", [authJwt.verifyToken], getProfesores);
+router.get("/profesores", /* [authJwt.verifyToken], */ getProfesores);
 
 // router.get("/profesores/:id", getCursoById);
 
