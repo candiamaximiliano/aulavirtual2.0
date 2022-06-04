@@ -124,7 +124,7 @@ exports.putUser = async (req, res, next) => {
 
 exports.getUsers = async (req, res, next) => {
   try {
-    const usuarios = User.findAll();
+    const usuarios = await User.findAll();
     res.send(usuarios);
   } catch (error) {
     console.error(error);
