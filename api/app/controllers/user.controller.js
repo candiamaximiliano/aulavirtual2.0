@@ -99,20 +99,26 @@ exports.putUser = async (req, res, next) => {
       ? res.status(404).send("No se encontró una usuario con ese id")
       : await User.update(
           {
-            imagen: imagen,
-            contraseña: contraseña,
-            nombre: nombre,
-            apellido: apellido,
-            usuario: usuario,
-            email: email,
-            dni: dni,
-            fechaDeNacimiento: fechaDeNacimiento,
-            direccion: direccion,
-            provincia: provincia,
-            ciudad: ciudad,
-            numeroDeContacto: numeroDeContacto,
-            consentimientoWhatsapp: consentimientoWhatsapp,
-            roles: roles,
+            imagen: imagen ? imagen : usuarioEncontrado.imagen,
+            contraseña: contraseña ? contraseña : usuarioEncontrado.contraseña,
+            nombre: nombre ? nombre : usuarioEncontrado.nombre,
+            apellido: apellido ? apellido : usuarioEncontrado.apellido,
+            usuario: usuario ? usuario : usuarioEncontrado.usuario,
+            email: email ? email : usuarioEncontrado.email,
+            dni: dni ? dni : usuarioEncontrado.dni,
+            fechaDeNacimiento: fechaDeNacimiento
+              ? fechaDeNacimiento
+              : usuarioEncontrado.fechaDeNacimiento,
+            direccion: direccion ? direccion : usuarioEncontrado.direccion,
+            provincia: provincia ? provincia : usuarioEncontrado.provincia,
+            ciudad: ciudad ? ciudad : usuarioEncontrado.ciudad,
+            numeroDeContacto: numeroDeContacto
+              ? numeroDeContacto
+              : usuarioEncontrado.numeroDeContacto,
+            consentimientoWhatsapp: consentimientoWhatsapp
+              ? consentimientoWhatsapp
+              : usuarioEncontrado.consentimientoWhatsapp,
+            roles: roles ? roles : usuarioEncontrado.roles,
           },
           { where: { id: id } }
         );
