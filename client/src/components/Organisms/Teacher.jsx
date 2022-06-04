@@ -15,7 +15,7 @@ export const Teacher = ({
         <div className={teacherStyle.imagenContainer}>
           <img
             className={teacherStyle.imagen}
-            src={`${process.env.REACT_APP_BACKEND}/imagenes/${imagen}.png`}
+            src={`${process.env.REACT_APP_BACKEND}/imagenes/${imagen}`}
             alt={nombre}
           />
         </div>
