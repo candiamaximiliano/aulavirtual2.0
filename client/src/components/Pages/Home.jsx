@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Banner } from "../Organisms/Banner";
 import { getAllAnuncios } from "../../redux/actionCreators";
 import { Publication } from "../Organisms/Publication";
 import home from "../../styles/home.module.css";
-import Loading from "../Organisms/Spinner";
 
 const Home = () => {
   const anuncios = useSelector((state) => state.anuncioReducer.anuncios);
-  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllAnuncios());
   }, [dispatch]);
 
-  setTimeout(() => {
-    setLoading(false);
-  }, 2000);
-
-  /* loading ? (
-    <Loading />
-  ) : ( */
   return (
     <div className={home.body}>
       <Banner

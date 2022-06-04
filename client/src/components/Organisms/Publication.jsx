@@ -7,8 +7,7 @@ export const Publication = ({ coverImage, title, subtitle, url, content }) => {
       <div className={`publication__container ${publication.container}`}>
         <div className={`imgcontainer ${publication.imageContainer}`}>
           <img
-            className={`${process.env.REACT_APP_BACKEND}/imagenes/${publication.coverImage}`}
-            src={coverImage}
+            src={`${process.env.REACT_APP_BACKEND}/imagenes/${publication.coverImage}`}
             alt={title}
           />
         </div>
