@@ -1,6 +1,15 @@
 # Aula Virtual del Profesorado en Ritmos Caribeños (Posadas, Misiones)
 
-## BackEnd
+## DEPLOY
+
+---
+
+### Puedes ingresar a la aplicación ya en producción desde el siguiente link:
+
+- [Profesorado en Ritmos Caribeños](https://profesoradocaribeño.com.ar)
+> Haga click para Ingresar
+
+---
 
 - Crear archivo `.env` en la raiz de la carpeta `/api`
 ```
@@ -19,16 +28,7 @@ npm start
 ```
 >`npm install --force` en caso de que ocurra algun error a la hora de la instalación <br/>
 
----
 
-### Los endpoint para nuestra API son:
-
-- [Endpoints](https://github.com/MartinezBruno/Proyecto-Final-Henry/files/8765264/Endpoints.pdf)
-
-- [Endpoints para administrador](https://github.com/MartinezBruno/Proyecto-Final-Henry/files/8765267/Endpoint.Admin.pdf) 
-> Haga click para descargar
-
----
 
 ## FrontEnd
 
