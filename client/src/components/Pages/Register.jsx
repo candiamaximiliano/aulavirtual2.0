@@ -474,7 +474,7 @@ const Register = () => {
                     saveFile(e);
                   }}
                 />{" "}
-                <Modal>
+                <Modal isOpen={loading}>
                   <ModalBody>
                     <Spinner></Spinner>
                   </ModalBody>
