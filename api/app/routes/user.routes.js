@@ -12,6 +12,7 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 router.use(express.json());
 
+router.get("/usuarios/", controller.getUsers);
 router.put("/user/:id", controller.putUser);
 
 module.exports = router;
