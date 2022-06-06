@@ -146,7 +146,7 @@ const putMateria = async (req, res, next) => {
       where: { id: id },
     });
 
-    const cursoDB = await Curso.findOne({
+    const cursoDB = await Curso?.findOne({
       where: {
         nombre: curso,
       },
