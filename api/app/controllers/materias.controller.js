@@ -141,6 +141,7 @@ const putMateria = async (req, res, next) => {
   try {
     const { id } = req.params;
     const idParams = Number(id);
+    console.log("Este es el id hecho numero", idParams);
     const { curso, nombre, subtitulo, informacion, nivel, portada } = req.body;
 
     const materiaEncontrada = await Materia.findOne({
