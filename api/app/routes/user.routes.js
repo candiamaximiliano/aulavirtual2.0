@@ -14,5 +14,6 @@ router.use(express.json());
 
 router.get("/usuarios/", controller.getUsers);
 router.put("/user/:id", controller.putUser);
+router.delete("/user/:id", controller.deleteUser);
 
 module.exports = router;

@@ -156,12 +156,14 @@ const putMateria = async (req, res, next) => {
       ? res.status(404).send("No se encontró una materia con ese id")
       : await Materia.update(
           {
-            nombre,
-            subtitulo,
-            informacion,
-            nivel,
-            portada,
-            belongsToCurso: curso,
+            nombre: nombre ? nombre : materiaEncontrada.nombre,
+            subtitulo: subtitulo ? subtitulo : materiaEncontrada.subtitulo,
+            informacion: informacion
+              ? informacion
+              : materiaEncontrada.informacion,
+            nivel: nivel ? nivel : materiaEncontrada.nivel,
+            portada: portada ? portada : materiaEncontrada.portada,
+            belongsToCurso: curso ? curso : materiaEncontrada.curso,
           },
           { where: { id: id } }
         );

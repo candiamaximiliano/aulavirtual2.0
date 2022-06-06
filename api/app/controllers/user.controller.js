@@ -138,3 +138,18 @@ exports.getUsers = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.deleteUser = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    await User.destroy({
+      where: {
+        id: id,
+      },
+    });
+    res.send("Usuario eliminado correctamente");
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};
