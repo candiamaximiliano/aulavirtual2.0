@@ -168,7 +168,7 @@ const putMateria = async (req, res, next) => {
             portada: portada ? portada : materiaEncontrada.portada,
             belongsToCurso: curso ? curso : materiaEncontrada.curso,
           },
-          { where: { id: id } }
+          { where: { id: idParams } }
         );
 
     cursoDB ? await materiaEncontrada.setCurso(cursoDB) : null;
