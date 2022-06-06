@@ -116,7 +116,7 @@ const postMateria = async (req, res, next) => {
       });
     }
 
-    materiaCreada = await Materia.findOne({
+    const materiaCreada = await Materia.findOne({
       where: {
         cursoId: null,
         nombre,
@@ -170,7 +170,7 @@ const putMateria = async (req, res, next) => {
           { where: { id: id } }
         );
 
-    cursoDB ? await materiaCreada.setCurso(cursoDB) : null;
+    cursoDB ? await materiaEncontrada.setCurso(cursoDB) : null;
 
     res.send("Materia actualizada correctamente");
   } catch (error) {
