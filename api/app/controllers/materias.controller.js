@@ -140,10 +140,11 @@ const postMateria = async (req, res, next) => {
 const putMateria = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const idParams = Number(id);
     const { curso, nombre, subtitulo, informacion, nivel, portada } = req.body;
 
     const materiaEncontrada = await Materia.findOne({
-      where: { id: id },
+      where: { id: idParams },
     });
 
     const cursoDB = (await Curso)
