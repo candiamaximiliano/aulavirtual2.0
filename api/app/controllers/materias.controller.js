@@ -148,7 +148,7 @@ const putMateria = async (req, res, next) => {
       where: { id: idParams },
     });
 
-    const cursoDB = (await Curso)
+    const cursoDB = curso
       ? Curso.findOne({
           where: {
             nombre: curso,
